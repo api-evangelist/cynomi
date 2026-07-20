@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://auth.eu.cynomi.com/.well-known/openid-configuration and the
+  dashboard.eu.cynomi.com runtime configuration (Auth0 SPA settings)
+docs: https://cynomi.com/platform/integrations/public-api/
+summary:
+  types: [oauth2, openIdConnect]
+  provider: Auth0
+  oauth2_flows: [authorizationCode, deviceCode, implicit]
+  pkce: true
+  token_format: JWT bearer
+  audience: https://api.prod-eu.eu.cynomi.com/
+notes: >-
+  Cynomi authenticates through an Auth0 tenant (auth.eu.cynomi.com, EU region).
+  The web/dashboard clients use OAuth 2.0 Authorization Code with PKCE (S256) to
+  obtain a JWT access token scoped to the API audience
+  https://api.prod-eu.eu.cynomi.com/. Cynomi's customer-facing Public API (for
+  PSA / ticketing task synchronization) is credentialed from within the platform
+  and its full auth reference is gated behind login; the discovery document below
+  is the authoritative, publicly reachable evidence of the OIDC/OAuth2 model.
+schemes:
+- name: Auth0OIDC
+  type: openIdConnect
+  openIdConnectUrl: https://auth.eu.cynomi.com/.well-known/openid-configuration
+  issuer: https://auth.eu.cynomi.com/
+  sources: [well-known/cynomi-openid-configuration.json]
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.eu.cynomi.com/authorize
+    tokenUrl: https://auth.eu.cynomi.com/oauth/token
+    pkce: true
+    code_challenge_methods: [S256, plain]
+  - flow: deviceCode
+    deviceAuthorizationUrl: https://auth.eu.cynomi.com/oauth/device/code
+    tokenUrl: https://auth.eu.cynomi.com/oauth/token
+  revocationUrl: https://auth.eu.cynomi.com/oauth/revoke
+  userinfoUrl: https://auth.eu.cynomi.com/userinfo
+  jwksUri: https://auth.eu.cynomi.com/.well-known/jwks.json
+  audience: https://api.prod-eu.eu.cynomi.com/
+  sources: [well-known/cynomi-openid-configuration.json]
