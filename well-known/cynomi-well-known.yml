@@ -1,0 +1,37 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of Cynomi hosts (Auth0 tenant + web + API)
+notes: >-
+  Cynomi's identity is an Auth0 tenant at auth.eu.cynomi.com, which serves real
+  RFC 8414 / OpenID Connect discovery documents (saved verbatim). The marketing
+  site (cynomi.com) and the region API host (api.prod-eu.eu.cynomi.com) expose no
+  /.well-known/ surface. The dashboard SPA (dashboard.eu.cynomi.com) returns HTTP
+  200 for every /.well-known/ path, but that is the React app's index.html
+  fallback (not a real document), so those are recorded as not-present.
+hosts:
+- host: https://auth.eu.cynomi.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: cynomi-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: cynomi-oauth-authorization-server.json
+- host: https://cynomi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.prod-eu.eu.cynomi.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404

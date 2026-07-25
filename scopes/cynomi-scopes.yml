@@ -1,0 +1,53 @@
+generated: '2026-07-18'
+method: searched
+source: https://auth.eu.cynomi.com/.well-known/openid-configuration
+docs: https://cynomi.com/platform/integrations/public-api/
+notes: >-
+  These are the OpenID Connect standard scopes advertised by Cynomi's Auth0
+  tenant (scopes_supported in the discovery document). They govern identity /
+  profile claims on the login flow. Cynomi's Public API authorizes calls with a
+  JWT access token bound to the audience https://api.prod-eu.eu.cynomi.com/;
+  per-resource API permission scopes are not published on the public discovery
+  surface (the Public API reference is gated behind login), so only the
+  OIDC identity scopes are captured here.
+schemes:
+- name: Auth0OIDC
+  source: well-known/cynomi-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.eu.cynomi.com/authorize
+    tokenUrl: https://auth.eu.cynomi.com/oauth/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; issue an ID token.
+  flows: [authorizationCode]
+- scope: profile
+  description: Access the user's basic profile claims.
+  flows: [authorizationCode]
+- scope: email
+  description: Access the user's email and email_verified claims.
+  flows: [authorizationCode]
+- scope: offline_access
+  description: Issue a refresh token for long-lived access.
+  flows: [authorizationCode]
+- scope: name
+  description: User's full name claim.
+  flows: [authorizationCode]
+- scope: given_name
+  description: User's given name claim.
+  flows: [authorizationCode]
+- scope: family_name
+  description: User's family name claim.
+  flows: [authorizationCode]
+- scope: nickname
+  description: User's nickname claim.
+  flows: [authorizationCode]
+- scope: picture
+  description: User's profile picture claim.
+  flows: [authorizationCode]
+- scope: phone
+  description: User's phone number claim.
+  flows: [authorizationCode]
+- scope: address
+  description: User's address claim.
+  flows: [authorizationCode]

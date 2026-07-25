@@ -1,0 +1,35 @@
+# Cynomi
+
+> Cynomi is an AI-powered, automated virtual CISO (vCISO) platform built for MSPs, MSSPs, and consultancies to deliver scalable cybersecurity and compliance services. It automates risk assessments, generates tailored security policies and remediation plans, maps controls to frameworks (NIST, ISO 27001, SOC 2, PCI DSS, GDPR, NIS2, HIPAA), and tracks posture over time. Cynomi exposes a Public API for bi-directional task synchronization with PSA and ticketing systems, plus pre-built integrations with vulnerability scanners and cloud security tools.
+
+## Platform
+- [Cynomi vCISO Platform](https://cynomi.com/vciso-platform/): AI-driven vCISO platform overview.
+- [Integrations](https://cynomi.com/platform/integrations/): Pre-built scanner, cloud, and PSA integrations.
+- [Public API](https://cynomi.com/platform/integrations/public-api/): Platform-agnostic REST API for bi-directional PSA / ticketing task synchronization (push remediation tasks, pull status updates).
+- [Assessments](https://cynomi.com/platform/assessments/): Automated security and compliance assessments.
+- [Frameworks](https://cynomi.com/frameworks/): Supported compliance frameworks library.
+
+## Authentication
+- [OpenID Connect discovery](https://auth.eu.cynomi.com/.well-known/openid-configuration): Auth0 tenant (EU region); OAuth 2.0 Authorization Code with PKCE, device code flow, JWT access tokens scoped to audience https://api.prod-eu.eu.cynomi.com/.
+
+## Trust & Compliance
+- [Trust Center](https://cynomi.com/security/): SOC 2 Type II and ISO 27001 certified; GDPR-aligned; HIPAA support. Request reports/certificates on request.
+
+## Partners
+- [Partner Portal](https://partners.cynomi.com/): Central hub for MSP/MSSP partners delivering vCISO services.
+- [Partners](https://cynomi.com/partners/): Partner program overview.
+
+## Resources
+- [Blog](https://cynomi.com/blog/): Cynomi blog.
+- [vCISO Academy](https://cynomi.com/academy/): Guidance, templates, and the vCISO toolkit.
+- [Product Login](https://cynomi.com/product-login/): Platform login.
+- [Pricing](https://cynomi.com/pricing/): Plans and pricing.
+
+## Repository artifacts (API Evangelist)
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/cynomi/refs/heads/main/apis.yml): APIs.json profile.
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/cynomi/refs/heads/main/authentication/cynomi-authentication.yml)
+- [OAuth / OIDC scopes](https://raw.githubusercontent.com/api-evangelist/cynomi/refs/heads/main/scopes/cynomi-scopes.yml)
+- [Well-known index](https://raw.githubusercontent.com/api-evangelist/cynomi/refs/heads/main/well-known/cynomi-well-known.yml)
+- [Trust center](https://raw.githubusercontent.com/api-evangelist/cynomi/refs/heads/main/security/cynomi-trust-center.yml)
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/cynomi/refs/heads/main/security/cynomi-domain-security.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/cynomi/refs/heads/main/conventions/cynomi-conventions.yml)

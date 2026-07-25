@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+probe: true
+source: https://cynomi.com/security/
+url: https://cynomi.com/security/
+certifications:
+- SOC 2 Type II
+- ISO 27001
+- GDPR
+- HIPAA
+compliance_notes: >-
+  Cynomi's Trust Center states the platform holds SOC 2 Type II and ISO 27001
+  certifications, with a GDPR-aligned privacy program and HIPAA support.
+  Customers can request the SOC 2 Type II report and the ISO 27001 certificate
+  directly from the Trust Center page. Annual third-party penetration tests are
+  cited.
+request_process:
+- Request SOC 2 Type II report (button on Trust Center)
+- Request ISO 27001 certificate (button on Trust Center)
+- Request GDPR certificate (button on Trust Center)
+evidence:
+- source: https://cynomi.com/security/
+  keywords:
+  - soc 2 type ii
+  - iso 27001
+  - gdpr
+  - hipaa
+  - trust center

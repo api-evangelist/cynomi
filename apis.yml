@@ -1,9 +1,33 @@
 aid: cynomi
 name: Cynomi
-description: Cynomi is a company surfaced as a portfolio company of canaan-partners, insight-partners
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+description: >-
+  Cynomi is an AI-powered, automated virtual CISO (vCISO) platform built for MSPs,
+  MSSPs, and cybersecurity consultancies to deliver scalable security and
+  compliance services to their clients. The platform automates risk assessments,
+  generates tailored security policies and prioritized remediation plans, and maps
+  controls to leading frameworks including NIST CSF, ISO 27001, SOC 2, PCI DSS,
+  GDPR, NIS2, and HIPAA, tracking security posture over time. Cynomi exposes a
+  platform-agnostic Public API for bi-directional task synchronization with any PSA
+  or ticketing system (ConnectWise, ServiceNow, Autotask, HaloPSA, Kaseya, NinjaOne,
+  Atera), pushing remediation tasks out and pulling status updates back, alongside
+  pre-built integrations with vulnerability scanners (Tenable, Qualys, Rapid7,
+  CrowdStrike, SentinelOne) and cloud security tools. Authentication is handled
+  through an Auth0 tenant using OAuth 2.0 / OpenID Connect. Cynomi is backed by
+  Canaan Partners and Insight Partners.
 url: https://raw.githubusercontent.com/api-evangelist/cynomi/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cynomi.com/wp-content/uploads/2026/04/Share-image.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -13,10 +37,39 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Cybersecurity
+- Security
+- Compliance
+- vCISO
+- Risk Management
+- GRC
+- MSP
+- MSSP
+- Vulnerability Management
+apis:
+- name: Cynomi Public API
+  description: >-
+    Platform-agnostic REST API for bi-directional task synchronization between
+    Cynomi and any PSA or ticketing system — push remediation tasks from Cynomi
+    and pull status updates back to keep both systems a single source of truth.
+    Region-scoped and namespaced under /v1/; authenticated with an Auth0-issued
+    JWT access token. The full reference is gated behind platform login.
+  humanURL: https://cynomi.com/platform/integrations/public-api/
+  baseURL: https://api.prod-eu.eu.cynomi.com
+  tags:
+  - Security
+  - Compliance
+  - Task Synchronization
+  properties:
+  - type: Authentication
+    url: authentication/cynomi-authentication.yml
+  - type: OAuthScopes
+    url: scopes/cynomi-scopes.yml
+  - type: Conventions
+    url: conventions/cynomi-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +78,42 @@ maintainers:
 common:
 - type: Website
   url: https://cynomi.com/
+- type: DeveloperPortal
+  url: https://cynomi.com/platform/integrations/public-api/
+- type: Documentation
+  url: https://cynomi.com/platform/integrations/
+- type: Blog
+  url: https://cynomi.com/blog/
+- type: Login
+  url: https://cynomi.com/product-login/
+- type: Pricing
+  url: https://cynomi.com/pricing/
+- type: TermsOfService
+  url: https://cynomi.com/eula/
+- type: PrivacyPolicy
+  url: https://cynomi.com/privacy-policy/
+- type: Support
+  url: https://cynomi.com/academy/
+- type: Partners
+  url: https://partners.cynomi.com/
+- type: Authentication
+  url: authentication/cynomi-authentication.yml
+- type: OAuthScopes
+  url: scopes/cynomi-scopes.yml
+- type: WellKnown
+  url: well-known/cynomi-well-known.yml
+- type: Conventions
+  url: conventions/cynomi-conventions.yml
+- type: DomainSecurity
+  url: security/cynomi-domain-security.yml
+- type: TrustCenter
+  url: security/cynomi-trust-center.yml
+- type: Compliance
+  url: https://cynomi.com/security/
+- type: LLMsTxt
+  url: llms/cynomi-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

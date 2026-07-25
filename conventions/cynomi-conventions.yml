@@ -1,0 +1,38 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  dashboard.eu.cynomi.com runtime configuration (VITE_API_* prefixes) +
+  auth.eu.cynomi.com OIDC discovery
+docs: https://cynomi.com/platform/integrations/public-api/
+notes: >-
+  Derived from Cynomi's publicly reachable web/dashboard runtime configuration.
+  The customer-facing Public API reference is gated behind login, so
+  request/response envelope, pagination, and idempotency semantics are not
+  publicly documented and are intentionally left unasserted here (no
+  fabrication). Only cross-cutting facts evidenced by the shipped configuration
+  and discovery documents are recorded.
+authentication:
+  style: oauth2-bearer
+  detail: >-
+    JWT access token from Auth0 (auth.eu.cynomi.com), audience
+    https://api.prod-eu.eu.cynomi.com/, sent as an Authorization: Bearer header.
+  ref: authentication/cynomi-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: >-
+    API paths are namespaced under /v1/ with per-service prefixes
+    (e.g. /v1/be, /v1/ev, /v1/qs, /v1/rep, /v1/sc, /v1/agg, /v1/cms, /v1/ur,
+    /v1/fs, /v1/bc, /v1/as, /v1/fi, /v1/rm, /v1/compliance).
+  base_url: https://api.prod-eu.eu.cynomi.com
+regions:
+  detail: Region-scoped API + auth hosts; EU region observed (eu.cynomi.com).
+events:
+  transport: websocket
+  detail: Realtime events over Socket.IO at /v1/ns/socket.io/ on the API host.
+idempotency:
+  supported: unknown
+  detail: No idempotency-key contract is publicly documented.
+pagination:
+  style: unknown
+  detail: Pagination parameters are not publicly documented.
